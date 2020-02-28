@@ -1,5 +1,5 @@
 ::@echo off
-set httpsgit="https://github.com/cafenombre/FormForm.git"
+set httpsgit="https://github.com/cafenombre/KnockoutTypeScriptBase.git"
 
 REM SET UP GIT ENV :
 git init
