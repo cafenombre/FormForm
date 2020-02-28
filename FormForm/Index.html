@@ -4,10 +4,11 @@
     <meta charset="utf-8" />
     <title></title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/bootstrap-reboot.min.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap-reboot.min.css" rel="stylesheet" />
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
 
-
+    <script src="https://kit.fontawesome.com/be5e445ed5.js" crossorigin="anonymous"></script>
     <script src="scripts/framework/jquery-3.4.1.min.js"></script>
     <script src="scripts/framework/knockout-3.5.1.js"></script>
     <script src="scripts/framework/bootstrap.min.js"></script>
@@ -21,10 +22,94 @@
 </head>
 <body>
 
-    <div class="alert alert-primary" role="alert">
-       <span data-bind="text: name"></span>
-       <span data-bind="text: lastname"></span>
-    </div>
+    <form id="form1" runat="server">
+
+        <!--Ajout du container-->
+
+        <div class="container-fluid">
+
+            <!--1 : Création de la ligne-->
+            <div class="row">
+
+                <!--2 : Création des colonnes-->
+
+                <!--Colonne 2-->
+                <div class="col-md-8 col-md-push-4">
+
+                    <!--Création du panel : Liste des tâches-->
+                    <div class="card border-primary mb-3">
+                        <div class="card-header">Films list</div>
+                        <div class="card-body text-primary">
+                            <h5 class="card-title">Movies list you have to see</h5>
+
+                            <!--Création de la table-->
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Title</th>
+                                        <th>Link</th>
+                                        <th>Seen</th>
+                                    </tr>
+                                </thead>
+                                <tbody data-bind="foreach: listeFilms">
+                                    <tr class="filmRow">
+
+                                        <td data-bind="text: id"></td>
+                                        <td><span data-bind="text: title"></span></td>
+                                        <td><a href="" target="_blank" data-bind="attr: { href: link }">Download</a></td>
+                                        <td>
+                                            <i class="fas fa-camera fa-3x"></i>
+                                            <input type="checkbox" data-bind="checked: seen, visible: !seen()" />
+
+                                        </td>
+                                    </tr>
+                                    <!--
+            <td>
+                <span class="glyphicon" data-bind="css: { 'glyphicon-refresh': !Terminee(), 'glyphicon-ok': Terminee }, visible: Terminee"></span>
+                <input type="checkbox" data-bind="checked: Terminee, visible: !Terminee()" />
+            </td>
+            -->
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>+</td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" data-bind="value: cacheFilm().title">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" data-bind="value: cacheFilm().link">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-primary" data-bind="click: addFilm">Add</button>
+                                        </td>
+
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+                            <button type="button" class="btn btn-info">
+                                Voir tous les films
+                            </button>
+                            <button type="button" class="btn btn-info">
+                                Voir les films non vus
+                            </button>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </form>
 
 </body>
 </html>

@@ -1,10 +1,10 @@
 ::@echo off
-set httpsgit="https://github.com/cafenombre/KnockoutTypeScriptBase.git"
+set httpsgit="https://github.com/cafenombre/FormForm.git"
 
 REM SET UP GIT ENV :
-git init
-git remote add origin %httpsgit%
-git remote -v
+::git init
+::git remote add origin %httpsgit%
+::git remote -v
 ::pause
 
 REM AutoCommit

@@ -1,0 +1,22 @@
+﻿body {
+    
+}
+
+.filmRow:hover {
+        cursor: pointer;
+        background-color: #e1f5fe;
+}
+
+.filmSeen {
+    background-color: #dcedc8 !important;
+}
+
+/*unuse for now*/
+.selected {
+    background-color: #b3e5fc;
+}
+
+/*unuse for now*/
+.filmRow.selected:hover {
+    background-color: #b3e5fc;
+}

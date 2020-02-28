@@ -1,10 +1,10 @@
 var ListCreator;
 (function (ListCreator) {
     var Film = /** @class */ (function () {
-        function Film() {
-            this.id = ko.observable(0);
-            this.titre = ko.observable("");
-            this.link = ko.observable("");
+        function Film(id, title, link) {
+            this.id = id ? ko.observable(id) : ko.observable(0);
+            this.title = title ? ko.observable(title) : ko.observable("vide");
+            this.link = link ? ko.observable(link) : ko.observable("http://google.com");
             this.seen = ko.observable(false);
         }
         return Film;
